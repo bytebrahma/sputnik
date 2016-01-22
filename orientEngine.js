@@ -89,6 +89,7 @@ orientServer.prototype.openDb=function(dbName){
 			cur.server.list()
 			.then((dbs)=>{
 				cur.dbList=dbs;				
+				return new Promise(function(resolve,reject){
 				if(!dbs.find(findDb)) { // database not found
 					log.info("database "+dbName+" not found. Creating one")
 					cur.createDb(dbName)
@@ -96,7 +97,8 @@ orientServer.prototype.openDb=function(dbName){
 						log.info("database created:"+val.name);
 						cur.db=val;
 						cur.db=cur.server.use(dbName);
-						resolve(val)	
+						resolve(1);
+						//resolve(val)	
 					})
 					.catch(err=>
 						{
@@ -109,14 +111,20 @@ orientServer.prototype.openDb=function(dbName){
 				{
 					log.info("found the database:"+dbName)
 					cur.db=cur.server.use(dbName)			
-					resolve(dbName)					
+					resolve(1);				
 				}
+				}); // End of Return (promise)
+			}) // End of then createdb
+			
+			.then(val=>{ // Database created
 				return cur.listClasses();
 			})
 			.then(val=>{ // cache the class list
+			log.info("Existing classes")
 			  val.forEach(function(element,index,array){
-				console.log(element.name);
+				console.log("class name:"+element.name);
 			  });
+			  resolve(val);
 			})
 			.catch(err =>{throw err});
 		}catch(e){
@@ -133,15 +141,19 @@ orientServer.prototype.createDb=function(dbName){
 		dbObj.name=dbName;
 		dbObj.type="graph";
 		dbObj.storage="plocal";
+		dbObj.username="admin";
+		dbObj.password="admin";
 		try{
 			cur.server.create(dbObj)
-			.then(db=>{log.info("created db="+dbName); resolve(dbName);
+			.then(db=>{log.info("created db="+dbName); 
+			resolve(dbName);
 		})
 		}catch(e){log.error(e); throw e;}
 	});
 	
 }
 orientServer.prototype.listClasses=function(){
+	log.debug("in listClasses");
 	var cur=this;
 	cur.classList=[];
 	return new Promise(function(resolve,reject){

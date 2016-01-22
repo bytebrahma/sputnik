@@ -121,39 +121,46 @@ schemaParser.prototype.buildRdbSqls=function(){
 		//})(this.vArr);
 		//doneSql();
 }
-var insertVertices=function(){
-		 //return new Promise(function(resolve,reject){
-			var cur=this;
-			/*Loop through the vertices
-			 - for each, loop through the results
-			   -For each row, insert an vertex
-			     #insert a vertex (set the class and attribs)
-			*/
-			/*var pArr1=[];
+schemaParser.prototype.insertVertices=function(){
+	var cur=this;
+		 return new Promise(function(resolve,reject){
+			
+			// Loop through the vertices
+			 // - for each, loop through the results
+			   // -For each row, insert an vertex
+			     // #insert a vertex (set the class and attribs)
+			
+			var pArr=[];
 			//pArr1.splice(0,pArr.length);
+			log.info("in insertVertices")
 			log.info("vArr count="+cur.vArr.length)
-			resolve(1);
-			for(var vi2=0;vi2<10;vi2++){				
-			log.info("inside vertex loop "+vi)
-				pArr1.push((function(vertex){
+			//resolve(1);
+			
+			for(var vi=0;vi<cur.vArr.length;vi++){				
+				log.info("inside vertex loop "+vi)
+				pArr.push((function(vertex){
 					log.info("inside vertex loop "+vertex.Class)
 					return new Promise(function(resolve,reject){
 					 
 						oServer.createClass(vertex.class,"V")
 						.then(val=>{
+							//after creating the class, insert the vertices from vArr.result
+							
 							resolve(val);
 						})//end then
 					}); // end promise
-				})(cur.vArr[i])// End anon function
+				})(cur.vArr[vi])// End anon function
 				)// End push
 				log.info("in insertVertices");
-				if(vi2==1) resolve(1);
+				//if(vi2==1) resolve(1);
 			} //end for
-		 });*/
-			return Promise.resolve(1);
 			
-			
-			
+			Promise.all(pArr).then(val=>{
+				resolve(val);
+			}) //then
+		 }); //End of Promise
+
+		 
 		} // End of function insertVertices
 schemaParser.prototype.processVertices=function(){
 	//Fire the sql from the sql attrib of the vertex obj
@@ -183,10 +190,6 @@ schemaParser.prototype.processVertices=function(){
 			}); // end of child promise
 		}
 			
-		
-		
-		
-		
 		for(var pi=0;pi<vpObj.vArr.length;pi++){
 			//cout("in vpObj Loop")
             //cout(vpObj.vArr[pi])
@@ -196,13 +199,13 @@ schemaParser.prototype.processVertices=function(){
 		Promise.all(pArr).then(function(val){
 			console.log("All promises kept for process Vertex");
 			log.info(oServer.classList.length)
-				return insertVertices();
-				//return Promise.resolve(1);
+				//return insertVertices();
+				resolve(1);
 		})
-		.then(val=>{ // Hanlding Promise array for all vertices 
+		// .then(val=>{ // Hanlding Promise array for all vertices 
 		
-			resolve(val);
-		})
+			// resolve(val);
+		// })
 		.catch(e=>{throw e});
 		
 	
@@ -311,18 +314,21 @@ var mineRdb=function(rdbConn){
 				vParser.commonAttrib=vJson['@meta'].attrib;
 				vParser.vArr=vJson.vertices;					
 				
-				vParser.buildRdbSqls().then(function(val){
-					// log.info("values from vParser")
-					// log.info(vParser.vArr);
-					//vParser.vArr=val.vArr;                        
+				vParser.buildRdbSqls().then(function(val){					
 					log.info("build success")
 					return vParser.processVertices()}
 				
-				)
+				)				
 				.then(function(val){  // processVertices
-						resolvemineRdb(val);
-				 	 }
-					);
+					log.info("ProcessVertices complete")
+					return vParser.insertVertices();
+				 }
+				)
+				.then(function(val){ //insertVertices
+				log.info("insert Vertices complete");
+					resolvemineRdb(val);
+				}
+				);
 							
 				
 			});
@@ -336,7 +342,7 @@ var mineRdb=function(rdbConn){
 			resolve(vals);	}
 		);	
 
-	}); // END of PROMISE
+	}); // END of mineRdb PROMISE
 	
 }
 

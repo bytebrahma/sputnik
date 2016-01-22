@@ -549,3 +549,1541 @@
 2016-01-21T19:49:18.377Z - info: in openDb.then()
 2016-01-21T19:49:18.386Z - info: build success
 2016-01-21T19:49:23.756Z - info: 10
+2016-01-22T16:57:44.953Z - info: oServer.serverNamelocal
+2016-01-22T16:57:44.955Z - info: in init catch
+2016-01-22T16:57:44.955Z - error: In final catch
+2016-01-22T16:57:44.956Z - info: Argument for db name missing
+2016-01-22T16:57:44.956Z - info: THE END
+2016-01-22T16:57:56.412Z - info: oServer.serverNamelocal
+2016-01-22T16:57:56.418Z - info: THE END
+2016-01-22T16:57:56.446Z - info: inside oServer.start().then
+2016-01-22T16:57:57.044Z - info: database mydb1 not found. Creating one
+2016-01-22T16:57:57.051Z - error:  TypeError: Cannot read property 'class' of undefined
+    at F:\dev\sputnik\orientEngine.js:149:9
+    at orientServer.openDb.cur.server.list.then.orientServer.createDb.orientServer.listClasses (F:\dev\sputnik\orientEngine.js:147:9)
+    at Server.<anonymous> (F:\dev\sputnik\orientEngine.js:114:16)
+    at Server.tryCatcher (F:\dev\sputnik\node_modules\orientjs\node_modules\bluebird\js\main\util.js:26:23)
+    at Promise._settlePromiseFromHandler (F:\dev\sputnik\node_modules\orientjs\node_modules\bluebird\js\main\promise.js:503:31)
+    at Promise._settlePromiseAt (F:\dev\sputnik\node_modules\orientjs\node_modules\bluebird\js\main\promise.js:577:18)
+    at Promise._settlePromises (F:\dev\sputnik\node_modules\orientjs\node_modules\bluebird\js\main\promise.js:693:14)
+    at Async._drainQueue (F:\dev\sputnik\node_modules\orientjs\node_modules\bluebird\js\main\async.js:123:16)
+    at Async._drainQueues (F:\dev\sputnik\node_modules\orientjs\node_modules\bluebird\js\main\async.js:133:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (F:\dev\sputnik\node_modules\orientjs\node_modules\bluebird\js\main\async.js:15:14)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+2016-01-22T16:58:14.505Z - info: created db=mydb1
+2016-01-22T16:58:14.511Z - info: database created:undefined
+2016-01-22T16:58:14.512Z - info: in openDb.then()
+2016-01-22T16:58:14.528Z - info: build success
+2016-01-22T16:58:21.246Z - info: 0
+2016-01-22T17:05:45.296Z - info: oServer.serverNamelocal
+2016-01-22T17:05:45.303Z - info: THE END
+2016-01-22T17:05:45.326Z - info: inside oServer.start().then
+2016-01-22T17:05:45.404Z - info: database mydb5 not found. Creating one
+2016-01-22T17:05:52.356Z - info: created db=mydb5
+2016-01-22T17:05:52.358Z - info: database created:undefined
+2016-01-22T17:11:16.335Z - info: oServer.serverNamelocal
+2016-01-22T17:11:16.340Z - info: THE END
+2016-01-22T17:11:16.361Z - info: inside oServer.start().then
+2016-01-22T17:11:16.430Z - info: found the database:mydb5
+2016-01-22T17:14:07.845Z - info: oServer.serverNamelocal
+2016-01-22T17:14:07.851Z - info: THE END
+2016-01-22T17:14:07.873Z - info: inside oServer.start().then
+2016-01-22T17:14:07.942Z - info: found the database:mydb5
+2016-01-22T17:14:44.878Z - info: oServer.serverNamelocal
+2016-01-22T17:14:44.882Z - info: THE END
+2016-01-22T17:14:44.900Z - info: inside oServer.start().then
+2016-01-22T17:14:44.958Z - info: found the database:mydb5
+2016-01-22T17:14:45.278Z - info:  list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, sessionId=10, forcePrepare=true, name=mydb5, useToken=false, error=function () { [native code] }, log=function () { [native code] }, debug=function () {}, domain=null, reset=function () { [native code] }, _eventsCount=1, _maxListeners=Infinity, _bitField=268566529, _fulfillmentHandler0=undefined, _rejectionHandler0=undefined, _progressHandler0=undefined, _promise0=undefined, _receiver0=undefined, $ref=$[0]["db"]["server"]["transport"], $ref=$[0]["db"]["server"]["transport"], closing=false, retries=0, maxRetries=5, host=localhost, port=2424, username=root, password=root, enableRIDBags=true, useToken=false, , sessionId=10, error=function () { [native code] }, log=function () { [native code] }, debug=function () {}, domain=null, update-config=function () { [native code] }, reconnectNow=function () { [native code] }, error=function () { [native code] }, _eventsCount=3, _maxListeners=Infinity, host=localhost, port=2424, _connecting=false, _hadError=false, , fd=-1, reading=true, $ref=$[0]["db"]["server"]["transport"]["connection"]["socket"], onread=function onread(nread, buffer) {
+  var handle = this;
+  var self = handle.owner;
+  assert(handle === self._handle, 'handle != self._handle');
+
+  self._unrefTimer();
+
+  debug('onread', nread);
+
+  if (nread > 0) {
+    debug('got data');
+
+    // read success.
+    // In theory (and in practice) calling readStop right now
+    // will prevent this from being called again until _read() gets
+    // called again.
+
+    // if it's not enough data, we'll just call handle.readStart()
+    // again right away.
+    self.bytesRead += nread;
+
+    // Optimization: emit the original buffer with end points
+    var ret = self.push(buffer);
+
+    if (handle.reading && !ret) {
+      handle.reading = false;
+      debug('readStop');
+      var err = handle.readStop();
+      if (err)
+        self._destroy(errnoException(err, 'read'));
+    }
+    return;
+  }
+
+  // if we didn't get any bytes, that doesn't necessarily mean EOF.
+  // wait for the next one.
+  if (nread === 0) {
+    debug('not any data, keep waiting');
+    return;
+  }
+
+  // Error, possibly EOF.
+  if (nread !== uv.UV_EOF) {
+    return self._destroy(errnoException(nread, 'read'));
+  }
+
+  debug('EOF');
+
+  if (self._readableState.length === 0) {
+    self.readable = false;
+    maybeDestroy(self);
+  }
+
+  // push a null to signal the end of data.
+  self.push(null);
+
+  // internal end event so that we know that the actual socket
+  // is no longer readable, and we can start the shutdown
+  // procedure. No need to wait for all the data to be consumed.
+  self.emit('_socketEnd');
+}, onconnection=null, writeQueueSize=0, _parent=null, _host=localhost, objectMode=false, highWaterMark=16384, buffer=[], length=0, pipes=null, pipesCount=0, flowing=true, ended=false, endEmitted=false, reading=true, sync=false, needReadable=true, emittedReadable=false, readableListening=false, defaultEncoding=utf8, ranOut=false, awaitDrain=0, readingMore=false, decoder=null, encoding=null, resumeScheduled=false, readable=true, domain=null, close=[function g() {
+    this.removeListener(type, g);
+
+    if (!fired) {
+      fired = true;
+      listener.apply(this, arguments);
+    }
+  }, function () { [native code] }], data=function () { [native code] }, error=function () { [native code] }, end=function () { [native code] }, _eventsCount=4, _maxListeners=100, objectMode=false, highWaterMark=16384, needDrain=false, ending=false, ended=false, finished=false, decodeStrings=false, defaultEncoding=utf8, length=0, writing=false, corked=0, sync=false, bufferProcessing=false, onwrite=function (er) {
+    onwrite(stream, er);
+  }, writecb=null, writelen=0, bufferedRequest=null, lastBufferedRequest=null, pendingcb=0, prefinished=false, errorEmitted=false, writable=true, allowHalfOpen=false, destroyed=false, bytesRead=7111, _bytesDispatched=190, _sockname=null, _pendingData=null, _pendingEncoding=, read=function (n) {
+  debug('read', n);
+  var state = this._readableState;
+  var nOrig = n;
+
+  if (typeof n !== 'number' || n > 0)
+    state.emittedReadable = false;
+
+  // if we're doing read(0) to trigger a readable event, but we
+  // already have a bunch of data in the buffer, then just trigger
+  // the 'readable' event and move on.
+  if (n === 0 &&
+      state.needReadable &&
+      (state.length >= state.highWaterMark || state.ended)) {
+    debug('read: emitReadable', state.length, state.ended);
+    if (state.length === 0 && state.ended)
+      endReadable(this);
+    else
+      emitReadable(this);
+    return null;
+  }
+
+  n = howMuchToRead(n, state);
+
+  // if we've ended, and we're now clear, then finish it up.
+  if (n === 0 && state.ended) {
+    if (state.length === 0)
+      endReadable(this);
+    return null;
+  }
+
+  // All the actual chunk generation logic needs to be
+  // *below* the call to _read.  The reason is that in certain
+  // synthetic stream cases, such as passthrough streams, _read
+  // may be a completely synchronous operation which may change
+  // the state of the read buffer, providing enough data when
+  // before there was *not* enough.
+  //
+  // So, the steps are:
+  // 1. Figure out what the state of things will be after we do
+  // a read from the buffer.
+  //
+  // 2. If that resulting state will trigger a _read, then call _read.
+  // Note that this may be asynchronous, or synchronous.  Yes, it is
+  // deeply ugly to write APIs this way, but that still doesn't mean
+  // that the Readable class should behave improperly, as streams are
+  // designed to be sync/async agnostic.
+  // Take note if the _read call is sync or async (ie, if the read call
+  // has returned yet), so that we know whether or not it's safe to emit
+  // 'readable' etc.
+  //
+  // 3. Actually pull the requested chunks out of the buffer and return.
+
+  // if we need a readable event, then we need to do some reading.
+  var doRead = state.needReadable;
+  debug('need readable', doRead);
+
+  // if we currently have less than the highWaterMark, then also read some
+  if (state.length === 0 || state.length - n < state.highWaterMark) {
+    doRead = true;
+    debug('length less than watermark', doRead);
+  }
+
+  // however, if we've ended, then there's no point, and if we're already
+  // reading, then it's unnecessary.
+  if (state.ended || state.reading) {
+    doRead = false;
+    debug('reading or ended', doRead);
+  }
+
+  if (doRead) {
+    debug('do read');
+    state.reading = true;
+    state.sync = true;
+    // if the length is currently zero, then we *need* a readable event.
+    if (state.length === 0)
+      state.needReadable = true;
+    // call internal read method
+    this._read(state.highWaterMark);
+    state.sync = false;
+  }
+
+  // If _read pushed data synchronously, then `reading` will be false,
+  // and we need to re-evaluate how much data we can return to the user.
+  if (doRead && !state.reading)
+    n = howMuchToRead(nOrig, state);
+
+  var ret;
+  if (n > 0)
+    ret = fromList(n, state);
+  else
+    ret = null;
+
+  if (ret === null) {
+    state.needReadable = true;
+    n = 0;
+  }
+
+  state.length -= n;
+
+  // If we have nothing in the buffer, then we want to know
+  // as soon as we *do* get something into the buffer.
+  if (state.length === 0 && !state.ended)
+    state.needReadable = true;
+
+  // If we tried to read() past the EOF, then emit end on the next tick.
+  if (nOrig !== n && state.ended && state.length === 0)
+    endReadable(this);
+
+  if (ret !== null)
+    this.emit('data', ret);
+
+  return ret;
+}, _consuming=true, $ref=$[0]["db"]["server"]["transport"]["logger"], enableRIDBags=true, closing=false, reconnectNow=false, Operation=function Operation(data) {
+  this.status = Operation.PENDING;
+  this.writeOps = [];
+  this.readOps = [];
+  this.stack = [{}];
+  this.data = data || {};
+}, OperationQueue=function OperationQueue(socket) {
+  this.socket = socket || null;
+  this.items = [];
+  this.writes = [];
+  this.remaining = null;
+  if (socket) {
+    this.bindToSocket();
+  }
+  Emitter.call(this);
+}, PROTOCOL_VERSION=28, BYTES_LONG=8, BYTES_INT=4, BYTES_SHORT=2, BYTES_BYTE=1, d=100, b=98, f=102, D=100, B=98, F=102, serializeDocument=function serializeDocument(document, isMap) {
+  if (typeof document.toOrient === 'function') {
+    document = document.toOrient();
+  }
+
+  var result = '',
+      className = '',
+      fieldNames = Object.keys(document),
+      totalFields = fieldNames.length,
+      fieldWrap, value, field, i;
+
+  for (i = 0; i < totalFields; i++) {
+    field = fieldNames[i];
+    value = document[field];
+    if (field === '@class') {
+      className = value;
+    }
+    else if (field.charAt(0) === '@' || value === undefined) {
+      continue;
+    }
+    else {
+      if (isMap) {
+        fieldWrap = '"';
+      }
+      else {
+        fieldWrap = '';
+      }
+      result += fieldWrap + field + fieldWrap + ':' + serializeValue(value) + ',';
+    }
+  }
+
+  if (className !== '') {
+    result = className + '@' + result;
+  }
+
+  if (result[result.length - 1] === ',') {
+    result = result.slice(0, -1);
+  }
+
+  return result;
+}, serializeValue=function serializeValue(value) {
+  var type = typeof value;
+  if (type === 'string') {
+    return '"' + value.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"';
+  }
+  else if (type === 'number') {
+    return ~value.toString().indexOf('.') ? value + 'f' : value;
+  }
+  else if (type === 'boolean') {
+    return value ? true : false;
+  }
+  else if (Object.prototype.toString.call(value) === '[object Date]') {
+    return value.getTime() + 't';
+  }
+  else if (Array.isArray(value)) {
+    return serializeArray(value);
+  }
+  else if (value === Object(value)) {
+    return serializeObject(value);
+  }
+  else {
+    return '';
+  }
+}, encodeRecordData=function encodeRecordData(content) {
+  return new Buffer(serializeDocument(content), 'utf8');
+}, enableRIDBags=true, deserialize=function deserialize(input, classes) {
+  var record = {'@type': 'd'},
+      chunk, key, value;
+  if (!input) {
+    return null;
+  }
+  chunk = eatFirstKey(input);
+  if (chunk[2]) {
+    // this is actually a class name
+    record['@class'] = chunk[0];
+    input = chunk[1];
+    chunk = eatKey(input);
+    key = chunk[0];
+    input = chunk[1];
+  }
+  else {
+    key = chunk[0];
+    input = chunk[1];
+  }
+  // read the first value.
+  chunk = eatValue(input, classes);
+  value = chunk[0];
+  input = chunk[1];
+  record[key] = value;
+
+  while (input.length) {
+    if (input.charAt(0) === ',') {
+      input = input.slice(1);
+    }
+    else {
+      break;
+    }
+    chunk = eatKey(input);
+    key = chunk[0];
+    input = chunk[1];
+    if (input.length) {
+      chunk = eatValue(input, classes);
+      value = chunk[0];
+      input = chunk[1];
+      record[key] = value;
+    }
+    else {
+      record[key] = null;
+    }
+  }
+
+  if (classes && record['@class'] && classes[record['@class']]) {
+    return classes[record['@class']](record);
+  }
+  else {
+    return record;
+  }
+}, eatKey=function eatKey(input) {
+  var length = input.length,
+      collected = '',
+      result, c, i;
+
+  if (input.charAt(0) === '"') {
+    result = eatString(input.slice(1));
+    return [result[0], result[1].slice(1)];
+  }
+
+  for (i = 0; i < length; i++) {
+    c = input.charAt(i);
+    if (c === ':') {
+      break;
+    }
+    else {
+      collected += c;
+    }
+  }
+
+  return [collected, input.slice(i + 1)];
+}, eatValue=function eatValue(input, classes) {
+  var c, n;
+  c = input.charAt(0);
+  while (c === ' ' && input.length) {
+    input = input.slice(1);
+    c = input.charAt(0);
+  }
+
+  if (!input.length || c === ',') {
+    // this is a null field.
+    return [null, input];
+  }
+  else if (c === '"') {
+    return eatString(input.slice(1));
+  }
+  else if (c === '#') {
+    return eatRID(input.slice(1));
+  }
+  else if (c === '[') {
+    return eatArray(input.slice(1), classes);
+  }
+  else if (c === '<') {
+    return eatSet(input.slice(1), classes);
+  }
+  else if (c === '{') {
+    return eatMap(input.slice(1), classes);
+  }
+  else if (c === '(') {
+    return eatRecord(input.slice(1), classes);
+  }
+  else if (c === '%') {
+    return eatBag(input.slice(1));
+  }
+  else if (c === '_') {
+    return eatBinary(input.slice(1));
+  }
+  else if (c === '-' || c === '0' || +c) {
+    return eatNumber(input);
+  }
+  else if (c === 'n' && input.slice(0, 4) === 'null') {
+    return [null, input.slice(4)];
+  }
+  else if (c === 't' && input.slice(0, 4) === 'true') {
+    return [true, input.slice(4)];
+  }
+  else if (c === 'f' && input.slice(0, 5) === 'false') {
+    return [false, input.slice(5)];
+  }
+  else {
+    return [null, input];
+  }
+}, eatString=function eatString(input) {
+  var length = input.length,
+      collected = '',
+      c, i;
+
+  for (i = 0; i < length; i++) {
+    c = input.charAt(i);
+    if (c === '\\') {
+      // escape, skip to the next character
+      i++;
+      collected += input.charAt(i);
+      continue;
+    }
+    else if (c === '"') {
+      break;
+    }
+    else {
+      collected += c;
+    }
+  }
+
+  return [collected, input.slice(i + 1)];
+}, eatNumber=function eatNumber(input) {
+  var length = input.length,
+      collected = '',
+      pattern = /^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?/,
+      num, c, i;
+
+  num = input.match(pattern);
+  if (num) {
+    collected = num[0];
+    i = collected.length;
+  }
+
+  collected = +collected;
+  input = input.slice(i);
+
+  c = input.charAt(0);
+
+  if (c === 'a' || c === 't') {
+    collected = new Date(collected);
+    input = input.slice(1);
+  }
+  else if (c === 'b' || c === 's' || c === 'l' || c === 'f' || c == 'd' || c === 'c') {
+    input = input.slice(1);
+  }
+
+  return [collected, input];
+}, eatRID=function eatRID(input) {
+  var length = input.length,
+      collected = '',
+      cluster, c, i;
+
+  for (i = 0; i < length; i++) {
+    c = input.charAt(i);
+    if (cluster === undefined && c === ':') {
+      cluster = +collected;
+      collected = '';
+    }
+    else if (c === '-' || c === '0' || +c) {
+      collected += c;
+    }
+    else {
+      break;
+    }
+  }
+
+  return [new RID({cluster: cluster, position: +collected}), input.slice(i)];
+}, eatArray=function eatArray(input, classes) {
+  var length = input.length,
+      array = [],
+      chunk, c;
+
+  while (input.length) {
+    c = input.charAt(0);
+    if (c === ',') {
+      input = input.slice(1);
+    }
+    else if (c === ']') {
+      input = input.slice(1);
+      break;
+    }
+    chunk = eatValue(input, classes);
+    array.push(chunk[0]);
+    input = chunk[1];
+  }
+  return [array, input];
+}, eatSet=function eatSet(input, classes) {
+  var length = input.length,
+      set = [],
+      chunk, c;
+
+  while (input.length) {
+    c = input.charAt(0);
+    if (c === ',') {
+      input = input.slice(1);
+    }
+    else if (c === '>') {
+      input = input.slice(1);
+      break;
+    }
+    chunk = eatValue(input, classes);
+    set.push(chunk[0]);
+    input = chunk[1];
+  }
+
+  return [set, input];
+}, eatMap=function eatMap(input, classes) {
+  var length = input.length,
+      map = {},
+      key, value, chunk, c;
+
+  while (input.length) {
+    c = input.charAt(0);
+    if (c === ' ') {
+      input = input.slice(1);
+      continue;
+    }
+    if (c === ',') {
+      input = input.slice(1);
+    }
+    else if (c === '}') {
+      input = input.slice(1);
+      break;
+    }
+
+    chunk = eatKey(input);
+    key = chunk[0];
+    input = chunk[1];
+    if (input.length) {
+      chunk = eatValue(input, classes);
+      value = chunk[0];
+      input = chunk[1];
+      map[key] = value;
+    }
+    else {
+      map[key] = null;
+    }
+  }
+
+  return [map, input];
+}, eatRecord=function eatRecord(input, classes) {
+  var record = {'@type': 'd'},
+      chunk, c, key, value;
+
+  while (input.length) {
+    c = input.charAt(0);
+    if (c === ' ') {
+      input = input.slice(1);
+      continue;
+    }
+    else if (c === ')') {
+      // empty record.
+      input = input.slice(1);
+      return [record, input];
+    }
+    else {
+      break;
+    }
+  }
+
+  chunk = eatFirstKey(input);
+
+  if (chunk[2]) {
+    // this is actually a class name
+    record['@class'] = chunk[0];
+    input = chunk[1];
+    chunk = eatKey(input);
+    while (input.length) {
+      c = input.charAt(0);
+      if (c === ' ') {
+        input = input.slice(1);
+        continue;
+      }
+      else if (c === ')') {
+        // empty record.
+        input = input.slice(1);
+        return [record, input];
+      }
+      else {
+        break;
+      }
+    }
+    key = chunk[0];
+    input = chunk[1];
+  }
+  else {
+    key = chunk[0];
+    input = chunk[1];
+  }
+
+  // read the first value.
+  chunk = eatValue(input, classes);
+  value = chunk[0];
+  input = chunk[1];
+  record[key] = value;
+
+  while (input.length) {
+    c = input.charAt(0);
+    if (c === ' ') {
+      input = input.slice(1);
+      continue;
+    }
+    if (c === ',') {
+      input = input.slice(1);
+    }
+    else if (c === ')') {
+      input = input.slice(1);
+      break;
+    }
+    chunk = eatKey(input);
+    key = chunk[0];
+    input = chunk[1];
+    if (input.length) {
+      chunk = eatValue(input, classes);
+      value = chunk[0];
+      input = chunk[1];
+      record[key] = value;
+    }
+    else {
+      record[key] = null;
+    }
+  }
+
+  if (classes && record['@class'] && classes[record['@class']]) {
+    record = classes[record['@class']](record);
+  }
+
+  return [record, input];
+}, eatBag=function eatBag(input) {
+  var length = input.length,
+      collected = '',
+      i, bag, chunk, c;
+
+  for (i = 0; i < length; i++) {
+    c = input.charAt(i);
+    if (c === ';') {
+      break;
+    }
+    else {
+      collected += c;
+    }
+  }
+  input = input.slice(i + 1);
+
+  if (exports.enableRIDBags) {
+    return [new Bag(collected), input];
+  }
+  else {
+    return [new Bag(collected).all(), input];
+  }
+}, eatBinary=function eatBinary(input) {
+  var length = input.length,
+      collected = '',
+      i, bag, chunk, c;
+
+  for (i = 0; i < length; i++) {
+    c = input.charAt(i);
+    if (c === '_' || c === ',' || c === ')' || c === '>' || c === '}' || c === ']') {
+      break;
+    }
+    else {
+      collected += c;
+    }
+  }
+  input = input.slice(i + 1);
+
+  return [new Buffer(collected, 'base64'), input];
+}, connect=function () { return parent.apply(this, arguments); }, db-open=function () { return parent.apply(this, arguments); }, db-create=function () { return parent.apply(this, arguments); }, db-exists=function () { return parent.apply(this, arguments); }, db-delete=function () { return parent.apply(this, arguments); }, db-size=function () { return parent.apply(this, arguments); }, db-countrecords=function () { return parent.apply(this, arguments); }, db-reload=function () { return parent.apply(this, arguments); }, db-list=function () { return parent.apply(this, arguments); }, db-freeze=function () { return parent.apply(this, arguments); }, db-release=function () { return parent.apply(this, arguments); }, db-close=function () { return parent.apply(this, arguments); }, datacluster-add=function () { return parent.apply(this, arguments); }, datacluster-count=function () { return parent.apply(this, arguments); }, datacluster-datarange=function () { return parent.apply(this, arguments); }, datacluster-drop=function () { return parent.apply(this, arguments); }, record-create=function () { return parent.apply(this, arguments); }, record-load=function () { return parent.apply(this, arguments); }, record-metadata=function () { return parent.apply(this, arguments); }, record-update=function () { return parent.apply(this, arguments); }, record-delete=function () { return parent.apply(this, arguments); }, record-clean-out=function () { return parent.apply(this, arguments); }, command=function () { return parent.apply(this, arguments); }, tx-commit=function () { return parent.apply(this, arguments); }, config-list=function () { return parent.apply(this, arguments); }, config-get=function () { return parent.apply(this, arguments); }, config-set=function () { return parent.apply(this, arguments); }, queue=[], writes=[], remaining=null, connecting=false, protocolVersion=32, get=function () { [native code] }, set=function () { [native code] }, list=function () { [native code] }, domain=null, reset=[function () { [native code] }, function () { [native code] }, function () { [native code] }, function () { [native code] }, function () { [native code] }, function () { [native code] }, function () { [native code] }], error=function g() {
+    this.removeListener(type, g);
+
+    if (!fired) {
+      fired = true;
+      listener.apply(this, arguments);
+    }
+  }, _eventsCount=2, _maxListeners=Infinity, type=graph, storage=plocal, , useToken=false, username=admin, password=admin, dataSegments=[], transactionId=0, , , name=internal, id=0, name=index, id=1, name=manindex, id=2, name=default, id=3, name=orole, id=4, name=ouser, id=5, name=ofunction, id=6, name=oschedule, id=7, name=orids, id=8, name=v, id=9, name=e, id=10, $ref=$[0]["db"]["cluster"]["cached"]["ids"]["0"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["4"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["6"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["8"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["2"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["5"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["9"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["1"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["3"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["7"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["10"], items=[$ref=$[0]["db"]["cluster"]["cached"]["ids"]["0"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["4"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["6"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["8"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["2"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["5"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["9"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["1"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["3"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["7"], $ref=$[0]["db"]["cluster"]["cached"]["ids"]["10"]], list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, getByName=function () { [native code] }, getById=function () { [native code] }, drop=function () { [native code] }, count=function () { [native code] }, range=function () { [native code] }, cacheData=function () { [native code] }, $ref=$[0], list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"], name=E, shortName=null, defaultClusterId=10, clusterIds=[10], properties=[], superClass=null, originalName=E, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"], name=OUser, shortName=null, defaultClusterId=5, clusterIds=[5], properties=[fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OUser"], name=name, originalName=name, type=7, mandatory=true, readonly=false, notNull=true, collate=ci, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OUser"], name=roles, originalName=roles, type=15, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=ORole, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OUser"], name=status, originalName=status, type=7, mandatory=true, readonly=false, notNull=true, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OUser"], name=password, originalName=password, type=7, mandatory=true, readonly=false, notNull=true, collate=default, min=null, max=null, regexp=null, linkedClass=null], superClass=OIdentity, originalName=OUser, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"], name=OIdentity, shortName=null, defaultClusterId=-1, clusterIds=[-1], properties=[], superClass=null, originalName=OIdentity, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"], name=OSchedule, shortName=null, defaultClusterId=7, clusterIds=[7], properties=[fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OSchedule"], name=name, originalName=name, type=7, mandatory=true, readonly=false, notNull=true, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OSchedule"], name=start, originalName=start, type=0, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OSchedule"], name=function, originalName=function, type=13, mandatory=true, readonly=false, notNull=true, collate=default, min=null, max=null, regexp=null, linkedClass=OFunction, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OSchedule"], name=starttime, originalName=starttime, type=6, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OSchedule"], name=rule, originalName=rule, type=7, mandatory=true, readonly=false, notNull=true, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OSchedule"], name=arguments, originalName=arguments, type=12, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OSchedule"], name=status, originalName=status, type=7, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null], superClass=null, originalName=OSchedule, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"], name=ORestricted, shortName=null, defaultClusterId=-1, clusterIds=[-1], properties=[fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["ORestricted"], name=_allowDelete, originalName=_allowDelete, type=15, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=OIdentity, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["ORestricted"], name=_allow, originalName=_allow, type=15, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=OIdentity, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["ORestricted"], name=_allowUpdate, originalName=_allowUpdate, type=15, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=OIdentity, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["ORestricted"], name=_allowRead, originalName=_allowRead, type=15, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=OIdentity], superClass=null, originalName=ORestricted, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"], name=OTriggered, shortName=null, defaultClusterId=-1, clusterIds=[-1], properties=[], superClass=null, originalName=OTriggered, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"], name=OFunction, shortName=null, defaultClusterId=6, clusterIds=[6], properties=[fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OFunction"], name=parameters, originalName=parameters, type=10, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OFunction"], name=idempotent, originalName=idempotent, type=0, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OFunction"], name=name, originalName=name, type=7, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OFunction"], name=code, originalName=code, type=7, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["OFunction"], name=language, originalName=language, type=7, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null], superClass=null, originalName=OFunction, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"], name=V, shortName=null, defaultClusterId=9, clusterIds=[9], properties=[], superClass=null, originalName=V, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"], name=ORole, shortName=null, defaultClusterId=4, clusterIds=[4], properties=[fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["ORole"], name=name, originalName=name, type=7, mandatory=true, readonly=false, notNull=true, collate=ci, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["ORole"], name=rules, originalName=rules, type=12, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["ORole"], name=mode, originalName=mode, type=17, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$[0]["db"]["class"]["cached"]["names"]["ORole"], name=inheritedRole, originalName=inheritedRole, type=13, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=ORole], superClass=OIdentity, originalName=ORole, $ref=$, list=function () { [native code] }, create=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, get=function () { [native code] }, cacheData=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, resolveReferences=function () { [native code] }, meta=function () { [native code] }, update=function () { [native code] }, delete=function () { [native code] }, cached=false, list=function () { [native code] }, create=function () { [native code] }, drop=function () { [native code] }, get=function () { [native code] }, cacheData=function () { [native code] }, serverCluster=null, create=function () { [native code] }, delete=function () { [native code] }, from=function () { [native code] }, to=function () { [native code] }, name=ORIDs, shortName=null, defaultClusterId=8, clusterIds=[8], properties=[], superClass=null, originalName=ORIDs, $ref=$[0]["db"]["class"]["cached"]["names"]["E"], $ref=$[0]["db"]["class"]["cached"]["names"]["OUser"], $ref=$[0]["db"]["class"]["cached"]["names"]["OIdentity"], $ref=$[0]["db"]["class"]["cached"]["names"]["OSchedule"], $ref=$[0]["db"]["class"]["cached"]["names"]["ORestricted"], $ref=$[0]["db"]["class"]["cached"]["names"]["OTriggered"], $ref=$[0]["db"]["class"]["cached"]["names"]["OFunction"], $ref=$[0]["db"]["class"]["cached"]["names"]["V"], $ref=$[0]["db"]["class"]["cached"]["names"]["ORole"]
+2016-01-22T17:15:06.338Z - info: oServer.serverNamelocal
+2016-01-22T17:15:06.342Z - info: THE END
+2016-01-22T17:15:06.358Z - info: inside oServer.start().then
+2016-01-22T17:15:06.417Z - info: found the database:mydb5
+2016-01-22T17:15:06.438Z - info: 10
+2016-01-22T17:15:30.817Z - info: oServer.serverNamelocal
+2016-01-22T17:15:30.820Z - info: THE END
+2016-01-22T17:15:30.835Z - info: inside oServer.start().then
+2016-01-22T17:15:30.891Z - info: found the database:mydb5
+2016-01-22T17:15:31.143Z - info:  list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, sessionId=14, forcePrepare=true, name=mydb5, useToken=false, error=function () { [native code] }, log=function () { [native code] }, debug=function () {}, domain=null, reset=function () { [native code] }, _eventsCount=1, _maxListeners=Infinity, _bitField=268566529, _fulfillmentHandler0=undefined, _rejectionHandler0=undefined, _progressHandler0=undefined, _promise0=undefined, _receiver0=undefined, $ref=$["db"]["server"]["transport"], $ref=$["db"]["server"]["transport"], closing=false, retries=0, maxRetries=5, host=localhost, port=2424, username=root, password=root, enableRIDBags=true, useToken=false, , sessionId=14, error=function () { [native code] }, log=function () { [native code] }, debug=function () {}, domain=null, update-config=function () { [native code] }, reconnectNow=function () { [native code] }, error=function () { [native code] }, _eventsCount=3, _maxListeners=Infinity, host=localhost, port=2424, _connecting=false, _hadError=false, , fd=-1, reading=true, $ref=$["db"]["server"]["transport"]["connection"]["socket"], onread=function onread(nread, buffer) {
+  var handle = this;
+  var self = handle.owner;
+  assert(handle === self._handle, 'handle != self._handle');
+
+  self._unrefTimer();
+
+  debug('onread', nread);
+
+  if (nread > 0) {
+    debug('got data');
+
+    // read success.
+    // In theory (and in practice) calling readStop right now
+    // will prevent this from being called again until _read() gets
+    // called again.
+
+    // if it's not enough data, we'll just call handle.readStart()
+    // again right away.
+    self.bytesRead += nread;
+
+    // Optimization: emit the original buffer with end points
+    var ret = self.push(buffer);
+
+    if (handle.reading && !ret) {
+      handle.reading = false;
+      debug('readStop');
+      var err = handle.readStop();
+      if (err)
+        self._destroy(errnoException(err, 'read'));
+    }
+    return;
+  }
+
+  // if we didn't get any bytes, that doesn't necessarily mean EOF.
+  // wait for the next one.
+  if (nread === 0) {
+    debug('not any data, keep waiting');
+    return;
+  }
+
+  // Error, possibly EOF.
+  if (nread !== uv.UV_EOF) {
+    return self._destroy(errnoException(nread, 'read'));
+  }
+
+  debug('EOF');
+
+  if (self._readableState.length === 0) {
+    self.readable = false;
+    maybeDestroy(self);
+  }
+
+  // push a null to signal the end of data.
+  self.push(null);
+
+  // internal end event so that we know that the actual socket
+  // is no longer readable, and we can start the shutdown
+  // procedure. No need to wait for all the data to be consumed.
+  self.emit('_socketEnd');
+}, onconnection=null, writeQueueSize=0, _parent=null, _host=localhost, objectMode=false, highWaterMark=16384, buffer=[], length=0, pipes=null, pipesCount=0, flowing=true, ended=false, endEmitted=false, reading=true, sync=false, needReadable=true, emittedReadable=false, readableListening=false, defaultEncoding=utf8, ranOut=false, awaitDrain=0, readingMore=false, decoder=null, encoding=null, resumeScheduled=false, readable=true, domain=null, close=[function g() {
+    this.removeListener(type, g);
+
+    if (!fired) {
+      fired = true;
+      listener.apply(this, arguments);
+    }
+  }, function () { [native code] }], data=function () { [native code] }, error=function () { [native code] }, end=function () { [native code] }, _eventsCount=4, _maxListeners=100, objectMode=false, highWaterMark=16384, needDrain=false, ending=false, ended=false, finished=false, decodeStrings=false, defaultEncoding=utf8, length=0, writing=false, corked=0, sync=false, bufferProcessing=false, onwrite=function (er) {
+    onwrite(stream, er);
+  }, writecb=null, writelen=0, bufferedRequest=null, lastBufferedRequest=null, pendingcb=0, prefinished=false, errorEmitted=false, writable=true, allowHalfOpen=false, destroyed=false, bytesRead=7111, _bytesDispatched=190, _sockname=null, _pendingData=null, _pendingEncoding=, read=function (n) {
+  debug('read', n);
+  var state = this._readableState;
+  var nOrig = n;
+
+  if (typeof n !== 'number' || n > 0)
+    state.emittedReadable = false;
+
+  // if we're doing read(0) to trigger a readable event, but we
+  // already have a bunch of data in the buffer, then just trigger
+  // the 'readable' event and move on.
+  if (n === 0 &&
+      state.needReadable &&
+      (state.length >= state.highWaterMark || state.ended)) {
+    debug('read: emitReadable', state.length, state.ended);
+    if (state.length === 0 && state.ended)
+      endReadable(this);
+    else
+      emitReadable(this);
+    return null;
+  }
+
+  n = howMuchToRead(n, state);
+
+  // if we've ended, and we're now clear, then finish it up.
+  if (n === 0 && state.ended) {
+    if (state.length === 0)
+      endReadable(this);
+    return null;
+  }
+
+  // All the actual chunk generation logic needs to be
+  // *below* the call to _read.  The reason is that in certain
+  // synthetic stream cases, such as passthrough streams, _read
+  // may be a completely synchronous operation which may change
+  // the state of the read buffer, providing enough data when
+  // before there was *not* enough.
+  //
+  // So, the steps are:
+  // 1. Figure out what the state of things will be after we do
+  // a read from the buffer.
+  //
+  // 2. If that resulting state will trigger a _read, then call _read.
+  // Note that this may be asynchronous, or synchronous.  Yes, it is
+  // deeply ugly to write APIs this way, but that still doesn't mean
+  // that the Readable class should behave improperly, as streams are
+  // designed to be sync/async agnostic.
+  // Take note if the _read call is sync or async (ie, if the read call
+  // has returned yet), so that we know whether or not it's safe to emit
+  // 'readable' etc.
+  //
+  // 3. Actually pull the requested chunks out of the buffer and return.
+
+  // if we need a readable event, then we need to do some reading.
+  var doRead = state.needReadable;
+  debug('need readable', doRead);
+
+  // if we currently have less than the highWaterMark, then also read some
+  if (state.length === 0 || state.length - n < state.highWaterMark) {
+    doRead = true;
+    debug('length less than watermark', doRead);
+  }
+
+  // however, if we've ended, then there's no point, and if we're already
+  // reading, then it's unnecessary.
+  if (state.ended || state.reading) {
+    doRead = false;
+    debug('reading or ended', doRead);
+  }
+
+  if (doRead) {
+    debug('do read');
+    state.reading = true;
+    state.sync = true;
+    // if the length is currently zero, then we *need* a readable event.
+    if (state.length === 0)
+      state.needReadable = true;
+    // call internal read method
+    this._read(state.highWaterMark);
+    state.sync = false;
+  }
+
+  // If _read pushed data synchronously, then `reading` will be false,
+  // and we need to re-evaluate how much data we can return to the user.
+  if (doRead && !state.reading)
+    n = howMuchToRead(nOrig, state);
+
+  var ret;
+  if (n > 0)
+    ret = fromList(n, state);
+  else
+    ret = null;
+
+  if (ret === null) {
+    state.needReadable = true;
+    n = 0;
+  }
+
+  state.length -= n;
+
+  // If we have nothing in the buffer, then we want to know
+  // as soon as we *do* get something into the buffer.
+  if (state.length === 0 && !state.ended)
+    state.needReadable = true;
+
+  // If we tried to read() past the EOF, then emit end on the next tick.
+  if (nOrig !== n && state.ended && state.length === 0)
+    endReadable(this);
+
+  if (ret !== null)
+    this.emit('data', ret);
+
+  return ret;
+}, _consuming=true, $ref=$["db"]["server"]["transport"]["logger"], enableRIDBags=true, closing=false, reconnectNow=false, Operation=function Operation(data) {
+  this.status = Operation.PENDING;
+  this.writeOps = [];
+  this.readOps = [];
+  this.stack = [{}];
+  this.data = data || {};
+}, OperationQueue=function OperationQueue(socket) {
+  this.socket = socket || null;
+  this.items = [];
+  this.writes = [];
+  this.remaining = null;
+  if (socket) {
+    this.bindToSocket();
+  }
+  Emitter.call(this);
+}, PROTOCOL_VERSION=28, BYTES_LONG=8, BYTES_INT=4, BYTES_SHORT=2, BYTES_BYTE=1, d=100, b=98, f=102, D=100, B=98, F=102, serializeDocument=function serializeDocument(document, isMap) {
+  if (typeof document.toOrient === 'function') {
+    document = document.toOrient();
+  }
+
+  var result = '',
+      className = '',
+      fieldNames = Object.keys(document),
+      totalFields = fieldNames.length,
+      fieldWrap, value, field, i;
+
+  for (i = 0; i < totalFields; i++) {
+    field = fieldNames[i];
+    value = document[field];
+    if (field === '@class') {
+      className = value;
+    }
+    else if (field.charAt(0) === '@' || value === undefined) {
+      continue;
+    }
+    else {
+      if (isMap) {
+        fieldWrap = '"';
+      }
+      else {
+        fieldWrap = '';
+      }
+      result += fieldWrap + field + fieldWrap + ':' + serializeValue(value) + ',';
+    }
+  }
+
+  if (className !== '') {
+    result = className + '@' + result;
+  }
+
+  if (result[result.length - 1] === ',') {
+    result = result.slice(0, -1);
+  }
+
+  return result;
+}, serializeValue=function serializeValue(value) {
+  var type = typeof value;
+  if (type === 'string') {
+    return '"' + value.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"';
+  }
+  else if (type === 'number') {
+    return ~value.toString().indexOf('.') ? value + 'f' : value;
+  }
+  else if (type === 'boolean') {
+    return value ? true : false;
+  }
+  else if (Object.prototype.toString.call(value) === '[object Date]') {
+    return value.getTime() + 't';
+  }
+  else if (Array.isArray(value)) {
+    return serializeArray(value);
+  }
+  else if (value === Object(value)) {
+    return serializeObject(value);
+  }
+  else {
+    return '';
+  }
+}, encodeRecordData=function encodeRecordData(content) {
+  return new Buffer(serializeDocument(content), 'utf8');
+}, enableRIDBags=true, deserialize=function deserialize(input, classes) {
+  var record = {'@type': 'd'},
+      chunk, key, value;
+  if (!input) {
+    return null;
+  }
+  chunk = eatFirstKey(input);
+  if (chunk[2]) {
+    // this is actually a class name
+    record['@class'] = chunk[0];
+    input = chunk[1];
+    chunk = eatKey(input);
+    key = chunk[0];
+    input = chunk[1];
+  }
+  else {
+    key = chunk[0];
+    input = chunk[1];
+  }
+  // read the first value.
+  chunk = eatValue(input, classes);
+  value = chunk[0];
+  input = chunk[1];
+  record[key] = value;
+
+  while (input.length) {
+    if (input.charAt(0) === ',') {
+      input = input.slice(1);
+    }
+    else {
+      break;
+    }
+    chunk = eatKey(input);
+    key = chunk[0];
+    input = chunk[1];
+    if (input.length) {
+      chunk = eatValue(input, classes);
+      value = chunk[0];
+      input = chunk[1];
+      record[key] = value;
+    }
+    else {
+      record[key] = null;
+    }
+  }
+
+  if (classes && record['@class'] && classes[record['@class']]) {
+    return classes[record['@class']](record);
+  }
+  else {
+    return record;
+  }
+}, eatKey=function eatKey(input) {
+  var length = input.length,
+      collected = '',
+      result, c, i;
+
+  if (input.charAt(0) === '"') {
+    result = eatString(input.slice(1));
+    return [result[0], result[1].slice(1)];
+  }
+
+  for (i = 0; i < length; i++) {
+    c = input.charAt(i);
+    if (c === ':') {
+      break;
+    }
+    else {
+      collected += c;
+    }
+  }
+
+  return [collected, input.slice(i + 1)];
+}, eatValue=function eatValue(input, classes) {
+  var c, n;
+  c = input.charAt(0);
+  while (c === ' ' && input.length) {
+    input = input.slice(1);
+    c = input.charAt(0);
+  }
+
+  if (!input.length || c === ',') {
+    // this is a null field.
+    return [null, input];
+  }
+  else if (c === '"') {
+    return eatString(input.slice(1));
+  }
+  else if (c === '#') {
+    return eatRID(input.slice(1));
+  }
+  else if (c === '[') {
+    return eatArray(input.slice(1), classes);
+  }
+  else if (c === '<') {
+    return eatSet(input.slice(1), classes);
+  }
+  else if (c === '{') {
+    return eatMap(input.slice(1), classes);
+  }
+  else if (c === '(') {
+    return eatRecord(input.slice(1), classes);
+  }
+  else if (c === '%') {
+    return eatBag(input.slice(1));
+  }
+  else if (c === '_') {
+    return eatBinary(input.slice(1));
+  }
+  else if (c === '-' || c === '0' || +c) {
+    return eatNumber(input);
+  }
+  else if (c === 'n' && input.slice(0, 4) === 'null') {
+    return [null, input.slice(4)];
+  }
+  else if (c === 't' && input.slice(0, 4) === 'true') {
+    return [true, input.slice(4)];
+  }
+  else if (c === 'f' && input.slice(0, 5) === 'false') {
+    return [false, input.slice(5)];
+  }
+  else {
+    return [null, input];
+  }
+}, eatString=function eatString(input) {
+  var length = input.length,
+      collected = '',
+      c, i;
+
+  for (i = 0; i < length; i++) {
+    c = input.charAt(i);
+    if (c === '\\') {
+      // escape, skip to the next character
+      i++;
+      collected += input.charAt(i);
+      continue;
+    }
+    else if (c === '"') {
+      break;
+    }
+    else {
+      collected += c;
+    }
+  }
+
+  return [collected, input.slice(i + 1)];
+}, eatNumber=function eatNumber(input) {
+  var length = input.length,
+      collected = '',
+      pattern = /^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?/,
+      num, c, i;
+
+  num = input.match(pattern);
+  if (num) {
+    collected = num[0];
+    i = collected.length;
+  }
+
+  collected = +collected;
+  input = input.slice(i);
+
+  c = input.charAt(0);
+
+  if (c === 'a' || c === 't') {
+    collected = new Date(collected);
+    input = input.slice(1);
+  }
+  else if (c === 'b' || c === 's' || c === 'l' || c === 'f' || c == 'd' || c === 'c') {
+    input = input.slice(1);
+  }
+
+  return [collected, input];
+}, eatRID=function eatRID(input) {
+  var length = input.length,
+      collected = '',
+      cluster, c, i;
+
+  for (i = 0; i < length; i++) {
+    c = input.charAt(i);
+    if (cluster === undefined && c === ':') {
+      cluster = +collected;
+      collected = '';
+    }
+    else if (c === '-' || c === '0' || +c) {
+      collected += c;
+    }
+    else {
+      break;
+    }
+  }
+
+  return [new RID({cluster: cluster, position: +collected}), input.slice(i)];
+}, eatArray=function eatArray(input, classes) {
+  var length = input.length,
+      array = [],
+      chunk, c;
+
+  while (input.length) {
+    c = input.charAt(0);
+    if (c === ',') {
+      input = input.slice(1);
+    }
+    else if (c === ']') {
+      input = input.slice(1);
+      break;
+    }
+    chunk = eatValue(input, classes);
+    array.push(chunk[0]);
+    input = chunk[1];
+  }
+  return [array, input];
+}, eatSet=function eatSet(input, classes) {
+  var length = input.length,
+      set = [],
+      chunk, c;
+
+  while (input.length) {
+    c = input.charAt(0);
+    if (c === ',') {
+      input = input.slice(1);
+    }
+    else if (c === '>') {
+      input = input.slice(1);
+      break;
+    }
+    chunk = eatValue(input, classes);
+    set.push(chunk[0]);
+    input = chunk[1];
+  }
+
+  return [set, input];
+}, eatMap=function eatMap(input, classes) {
+  var length = input.length,
+      map = {},
+      key, value, chunk, c;
+
+  while (input.length) {
+    c = input.charAt(0);
+    if (c === ' ') {
+      input = input.slice(1);
+      continue;
+    }
+    if (c === ',') {
+      input = input.slice(1);
+    }
+    else if (c === '}') {
+      input = input.slice(1);
+      break;
+    }
+
+    chunk = eatKey(input);
+    key = chunk[0];
+    input = chunk[1];
+    if (input.length) {
+      chunk = eatValue(input, classes);
+      value = chunk[0];
+      input = chunk[1];
+      map[key] = value;
+    }
+    else {
+      map[key] = null;
+    }
+  }
+
+  return [map, input];
+}, eatRecord=function eatRecord(input, classes) {
+  var record = {'@type': 'd'},
+      chunk, c, key, value;
+
+  while (input.length) {
+    c = input.charAt(0);
+    if (c === ' ') {
+      input = input.slice(1);
+      continue;
+    }
+    else if (c === ')') {
+      // empty record.
+      input = input.slice(1);
+      return [record, input];
+    }
+    else {
+      break;
+    }
+  }
+
+  chunk = eatFirstKey(input);
+
+  if (chunk[2]) {
+    // this is actually a class name
+    record['@class'] = chunk[0];
+    input = chunk[1];
+    chunk = eatKey(input);
+    while (input.length) {
+      c = input.charAt(0);
+      if (c === ' ') {
+        input = input.slice(1);
+        continue;
+      }
+      else if (c === ')') {
+        // empty record.
+        input = input.slice(1);
+        return [record, input];
+      }
+      else {
+        break;
+      }
+    }
+    key = chunk[0];
+    input = chunk[1];
+  }
+  else {
+    key = chunk[0];
+    input = chunk[1];
+  }
+
+  // read the first value.
+  chunk = eatValue(input, classes);
+  value = chunk[0];
+  input = chunk[1];
+  record[key] = value;
+
+  while (input.length) {
+    c = input.charAt(0);
+    if (c === ' ') {
+      input = input.slice(1);
+      continue;
+    }
+    if (c === ',') {
+      input = input.slice(1);
+    }
+    else if (c === ')') {
+      input = input.slice(1);
+      break;
+    }
+    chunk = eatKey(input);
+    key = chunk[0];
+    input = chunk[1];
+    if (input.length) {
+      chunk = eatValue(input, classes);
+      value = chunk[0];
+      input = chunk[1];
+      record[key] = value;
+    }
+    else {
+      record[key] = null;
+    }
+  }
+
+  if (classes && record['@class'] && classes[record['@class']]) {
+    record = classes[record['@class']](record);
+  }
+
+  return [record, input];
+}, eatBag=function eatBag(input) {
+  var length = input.length,
+      collected = '',
+      i, bag, chunk, c;
+
+  for (i = 0; i < length; i++) {
+    c = input.charAt(i);
+    if (c === ';') {
+      break;
+    }
+    else {
+      collected += c;
+    }
+  }
+  input = input.slice(i + 1);
+
+  if (exports.enableRIDBags) {
+    return [new Bag(collected), input];
+  }
+  else {
+    return [new Bag(collected).all(), input];
+  }
+}, eatBinary=function eatBinary(input) {
+  var length = input.length,
+      collected = '',
+      i, bag, chunk, c;
+
+  for (i = 0; i < length; i++) {
+    c = input.charAt(i);
+    if (c === '_' || c === ',' || c === ')' || c === '>' || c === '}' || c === ']') {
+      break;
+    }
+    else {
+      collected += c;
+    }
+  }
+  input = input.slice(i + 1);
+
+  return [new Buffer(collected, 'base64'), input];
+}, connect=function () { return parent.apply(this, arguments); }, db-open=function () { return parent.apply(this, arguments); }, db-create=function () { return parent.apply(this, arguments); }, db-exists=function () { return parent.apply(this, arguments); }, db-delete=function () { return parent.apply(this, arguments); }, db-size=function () { return parent.apply(this, arguments); }, db-countrecords=function () { return parent.apply(this, arguments); }, db-reload=function () { return parent.apply(this, arguments); }, db-list=function () { return parent.apply(this, arguments); }, db-freeze=function () { return parent.apply(this, arguments); }, db-release=function () { return parent.apply(this, arguments); }, db-close=function () { return parent.apply(this, arguments); }, datacluster-add=function () { return parent.apply(this, arguments); }, datacluster-count=function () { return parent.apply(this, arguments); }, datacluster-datarange=function () { return parent.apply(this, arguments); }, datacluster-drop=function () { return parent.apply(this, arguments); }, record-create=function () { return parent.apply(this, arguments); }, record-load=function () { return parent.apply(this, arguments); }, record-metadata=function () { return parent.apply(this, arguments); }, record-update=function () { return parent.apply(this, arguments); }, record-delete=function () { return parent.apply(this, arguments); }, record-clean-out=function () { return parent.apply(this, arguments); }, command=function () { return parent.apply(this, arguments); }, tx-commit=function () { return parent.apply(this, arguments); }, config-list=function () { return parent.apply(this, arguments); }, config-get=function () { return parent.apply(this, arguments); }, config-set=function () { return parent.apply(this, arguments); }, queue=[], writes=[], remaining=null, connecting=false, protocolVersion=32, get=function () { [native code] }, set=function () { [native code] }, list=function () { [native code] }, domain=null, reset=[function () { [native code] }, function () { [native code] }, function () { [native code] }, function () { [native code] }, function () { [native code] }, function () { [native code] }, function () { [native code] }], error=function g() {
+    this.removeListener(type, g);
+
+    if (!fired) {
+      fired = true;
+      listener.apply(this, arguments);
+    }
+  }, _eventsCount=2, _maxListeners=Infinity, type=graph, storage=plocal, , useToken=false, username=admin, password=admin, dataSegments=[], transactionId=0, , , name=internal, id=0, name=index, id=1, name=manindex, id=2, name=default, id=3, name=orole, id=4, name=ouser, id=5, name=ofunction, id=6, name=oschedule, id=7, name=orids, id=8, name=v, id=9, name=e, id=10, $ref=$["db"]["cluster"]["cached"]["ids"]["0"], $ref=$["db"]["cluster"]["cached"]["ids"]["4"], $ref=$["db"]["cluster"]["cached"]["ids"]["6"], $ref=$["db"]["cluster"]["cached"]["ids"]["8"], $ref=$["db"]["cluster"]["cached"]["ids"]["2"], $ref=$["db"]["cluster"]["cached"]["ids"]["5"], $ref=$["db"]["cluster"]["cached"]["ids"]["9"], $ref=$["db"]["cluster"]["cached"]["ids"]["1"], $ref=$["db"]["cluster"]["cached"]["ids"]["3"], $ref=$["db"]["cluster"]["cached"]["ids"]["7"], $ref=$["db"]["cluster"]["cached"]["ids"]["10"], items=[$ref=$["db"]["cluster"]["cached"]["ids"]["0"], $ref=$["db"]["cluster"]["cached"]["ids"]["4"], $ref=$["db"]["cluster"]["cached"]["ids"]["6"], $ref=$["db"]["cluster"]["cached"]["ids"]["8"], $ref=$["db"]["cluster"]["cached"]["ids"]["2"], $ref=$["db"]["cluster"]["cached"]["ids"]["5"], $ref=$["db"]["cluster"]["cached"]["ids"]["9"], $ref=$["db"]["cluster"]["cached"]["ids"]["1"], $ref=$["db"]["cluster"]["cached"]["ids"]["3"], $ref=$["db"]["cluster"]["cached"]["ids"]["7"], $ref=$["db"]["cluster"]["cached"]["ids"]["10"]], list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, getByName=function () { [native code] }, getById=function () { [native code] }, drop=function () { [native code] }, count=function () { [native code] }, range=function () { [native code] }, cacheData=function () { [native code] }, $ref=$, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"], name=ORole, shortName=null, defaultClusterId=4, clusterIds=[4], properties=[fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["ORole"], name=inheritedRole, originalName=inheritedRole, type=13, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=ORole, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["ORole"], name=rules, originalName=rules, type=12, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["ORole"], name=name, originalName=name, type=7, mandatory=true, readonly=false, notNull=true, collate=ci, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["ORole"], name=mode, originalName=mode, type=17, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null], superClass=OIdentity, originalName=ORole, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"], name=ORIDs, shortName=null, defaultClusterId=8, clusterIds=[8], properties=[], superClass=null, originalName=ORIDs, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"], name=OUser, shortName=null, defaultClusterId=5, clusterIds=[5], properties=[fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OUser"], name=password, originalName=password, type=7, mandatory=true, readonly=false, notNull=true, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OUser"], name=roles, originalName=roles, type=15, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=ORole, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OUser"], name=status, originalName=status, type=7, mandatory=true, readonly=false, notNull=true, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OUser"], name=name, originalName=name, type=7, mandatory=true, readonly=false, notNull=true, collate=ci, min=null, max=null, regexp=null, linkedClass=null], superClass=OIdentity, originalName=OUser, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"], name=OIdentity, shortName=null, defaultClusterId=-1, clusterIds=[-1], properties=[], superClass=null, originalName=OIdentity, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"], name=E, shortName=null, defaultClusterId=10, clusterIds=[10], properties=[], superClass=null, originalName=E, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"], name=OSchedule, shortName=null, defaultClusterId=7, clusterIds=[7], properties=[fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OSchedule"], name=name, originalName=name, type=7, mandatory=true, readonly=false, notNull=true, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OSchedule"], name=arguments, originalName=arguments, type=12, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OSchedule"], name=start, originalName=start, type=0, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OSchedule"], name=rule, originalName=rule, type=7, mandatory=true, readonly=false, notNull=true, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OSchedule"], name=status, originalName=status, type=7, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OSchedule"], name=function, originalName=function, type=13, mandatory=true, readonly=false, notNull=true, collate=default, min=null, max=null, regexp=null, linkedClass=OFunction, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OSchedule"], name=starttime, originalName=starttime, type=6, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null], superClass=null, originalName=OSchedule, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"], name=OFunction, shortName=null, defaultClusterId=6, clusterIds=[6], properties=[fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OFunction"], name=parameters, originalName=parameters, type=10, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OFunction"], name=idempotent, originalName=idempotent, type=0, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OFunction"], name=code, originalName=code, type=7, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OFunction"], name=name, originalName=name, type=7, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"]["class"]["cached"]["names"]["OFunction"], name=language, originalName=language, type=7, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=null], superClass=null, originalName=OFunction, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"], name=V, shortName=null, defaultClusterId=9, clusterIds=[9], properties=[], superClass=null, originalName=V, list=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, alter=function () { [native code] }, rename=function () { [native code] }, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$["db"], name=OTriggered, shortName=null, defaultClusterId=-1, clusterIds=[-1], properties=[], superClass=null, originalName=OTriggered, items=[$ref=$, $ref=$["db"]["class"]["cached"]["names"]["ORole"], $ref=$["db"]["class"]["cached"]["names"]["ORIDs"], $ref=$["db"]["class"]["cached"]["names"]["OUser"], $ref=$["db"]["class"]["cached"]["names"]["OIdentity"], $ref=$["db"]["class"]["cached"]["names"]["E"], $ref=$["db"]["class"]["cached"]["names"]["OSchedule"], $ref=$["db"]["class"]["cached"]["names"]["OFunction"], $ref=$["db"]["class"]["cached"]["names"]["V"], $ref=$["db"]["class"]["cached"]["names"]["OTriggered"]], list=function () { [native code] }, create=function () { [native code] }, update=function () { [native code] }, drop=function () { [native code] }, get=function () { [native code] }, cacheData=function () { [native code] }, create=function () { [native code] }, get=function () { [native code] }, resolveReferences=function () { [native code] }, meta=function () { [native code] }, update=function () { [native code] }, delete=function () { [native code] }, cached=false, list=function () { [native code] }, create=function () { [native code] }, drop=function () { [native code] }, get=function () { [native code] }, cacheData=function () { [native code] }, serverCluster=null, create=function () { [native code] }, delete=function () { [native code] }, from=function () { [native code] }, to=function () { [native code] }, name=ORestricted, shortName=null, defaultClusterId=-1, clusterIds=[-1], properties=[fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$, name=_allow, originalName=_allow, type=15, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=OIdentity, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$, name=_allowDelete, originalName=_allowDelete, type=15, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=OIdentity, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$, name=_allowUpdate, originalName=_allowUpdate, type=15, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=OIdentity, fields=null, valueOf=function () { [native code] }, get=function () { [native code] }, set=function () { [native code] }, unset=function () { [native code] }, $ref=$, name=_allowRead, originalName=_allowRead, type=15, mandatory=false, readonly=false, notNull=false, collate=default, min=null, max=null, regexp=null, linkedClass=OIdentity], superClass=null, originalName=ORestricted
+2016-01-22T17:18:39.956Z - info: oServer.serverNamelocal
+2016-01-22T17:18:39.961Z - info: THE END
+2016-01-22T17:18:39.981Z - info: inside oServer.start().then
+2016-01-22T17:18:40.042Z - info: found the database:mydb5
+2016-01-22T17:18:40.061Z - info: Existing classes
+2016-01-22T17:18:40.067Z - info: in openDb.then()
+2016-01-22T17:18:40.076Z - info: build success
+2016-01-22T17:18:45.899Z - info: 10
+2016-01-22T17:19:41.107Z - info: oServer.serverNamelocal
+2016-01-22T17:19:41.111Z - info: THE END
+2016-01-22T17:19:41.125Z - info: inside oServer.start().then
+2016-01-22T17:19:41.184Z - info: found the database:mydb5
+2016-01-22T17:19:41.203Z - info: Existing classes
+2016-01-22T17:19:41.206Z - info: in openDb.then()
+2016-01-22T17:19:41.216Z - info: build success
+2016-01-22T17:19:47.506Z - info: 10
+2016-01-22T17:19:47.507Z - info: ProcessVertices complete
+2016-01-22T17:22:55.188Z - info: oServer.serverNamelocal
+2016-01-22T17:22:55.192Z - info: THE END
+2016-01-22T17:22:55.211Z - info: inside oServer.start().then
+2016-01-22T17:22:55.272Z - info: found the database:mydb5
+2016-01-22T17:22:55.293Z - info: Existing classes
+2016-01-22T17:22:55.299Z - info: in openDb.then()
+2016-01-22T17:22:55.307Z - info: build success
+2016-01-22T17:23:00.881Z - info: 10
+2016-01-22T17:23:00.882Z - info: ProcessVertices complete
+2016-01-22T17:26:20.980Z - info: oServer.serverNamelocal
+2016-01-22T17:26:20.984Z - info: THE END
+2016-01-22T17:26:21.003Z - info: inside oServer.start().then
+2016-01-22T17:26:21.066Z - info: found the database:mydb5
+2016-01-22T17:26:21.084Z - info: Existing classes
+2016-01-22T17:26:21.088Z - info: in openDb.then()
+2016-01-22T17:26:21.097Z - info: build success
+2016-01-22T17:26:27.334Z - info: 10
+2016-01-22T17:26:27.336Z - info: ProcessVertices complete
+2016-01-22T17:26:27.337Z - info: in insertVertices
+2016-01-22T17:26:59.920Z - info: oServer.serverNamelocal
+2016-01-22T17:26:59.925Z - info: THE END
+2016-01-22T17:26:59.942Z - info: inside oServer.start().then
+2016-01-22T17:27:00.000Z - info: found the database:mydb5
+2016-01-22T17:27:00.022Z - info: Existing classes
+2016-01-22T17:27:00.029Z - info: in openDb.then()
+2016-01-22T17:27:00.038Z - info: build success
+2016-01-22T17:27:05.522Z - info: 10
+2016-01-22T17:27:05.523Z - info: ProcessVertices complete
+2016-01-22T17:27:05.523Z - info: in insertVertices
+2016-01-22T17:27:05.524Z - info: vArr count=2
+2016-01-22T17:28:10.541Z - info: oServer.serverNamelocal
+2016-01-22T17:28:10.546Z - info: THE END
+2016-01-22T17:28:10.565Z - info: inside oServer.start().then
+2016-01-22T17:28:10.623Z - info: found the database:mydb5
+2016-01-22T17:28:10.645Z - info: Existing classes
+2016-01-22T17:28:10.652Z - info: in openDb.then()
+2016-01-22T17:28:10.662Z - info: build success
+2016-01-22T17:28:16.191Z - info: 10
+2016-01-22T17:28:16.191Z - info: ProcessVertices complete
+2016-01-22T17:28:16.192Z - info: in insertVertices
+2016-01-22T17:28:16.193Z - info: vArr count=2
+2016-01-22T17:28:16.193Z - info: inside vertex loop 0
+2016-01-22T17:28:16.194Z - info: inside vertex loop undefined
+2016-01-22T17:28:16.195Z - info: in insertVertices
+2016-01-22T17:28:16.196Z - info: inside vertex loop 1
+2016-01-22T17:28:16.196Z - info: inside vertex loop undefined
+2016-01-22T17:28:16.217Z - info: in insertVertices
+2016-01-22T17:28:17.305Z - info: insert Vertices complete
+2016-01-22T17:37:52.832Z - info: oServer.serverNamelocal
+2016-01-22T17:37:52.837Z - info: THE END
+2016-01-22T17:37:52.853Z - info: inside oServer.start().then
+2016-01-22T17:37:52.913Z - info: database mydb6 not found. Creating one
+2016-01-22T17:37:52.915Z - info: Existing classes
+2016-01-22T17:38:00.670Z - info: created db=mydb6
+2016-01-22T17:38:00.671Z - info: database created:undefined
+2016-01-22T18:16:37.381Z - info: oServer.serverNamelocal
+2016-01-22T18:16:37.387Z - info: THE END
+2016-01-22T18:16:37.409Z - info: inside oServer.start().then
+2016-01-22T18:16:37.477Z - info: found the database:mydb6
+2016-01-22T18:16:37.485Z - error:  TypeError: Cannot read property 'class' of undefined
+    at F:\dev\sputnik\orientEngine.js:161:9
+    at orientServer.openDb.cur.server.list.then.orientServer.createDb.orientServer.listClasses (F:\dev\sputnik\orientEngine.js:159:9)
+    at Server.<anonymous> (F:\dev\sputnik\orientEngine.js:120:12)
+    at Server.tryCatcher (F:\dev\sputnik\node_modules\orientjs\node_modules\bluebird\js\main\util.js:26:23)
+    at Promise._settlePromiseFromHandler (F:\dev\sputnik\node_modules\orientjs\node_modules\bluebird\js\main\promise.js:503:31)
+    at Promise._settlePromiseAt (F:\dev\sputnik\node_modules\orientjs\node_modules\bluebird\js\main\promise.js:577:18)
+    at Async._drainQueue (F:\dev\sputnik\node_modules\orientjs\node_modules\bluebird\js\main\async.js:128:12)
+    at Async._drainQueues (F:\dev\sputnik\node_modules\orientjs\node_modules\bluebird\js\main\async.js:133:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (F:\dev\sputnik\node_modules\orientjs\node_modules\bluebird\js\main\async.js:15:14)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+2016-01-22T18:18:58.837Z - info: oServer.serverNamelocal
+2016-01-22T18:18:58.842Z - info: THE END
+2016-01-22T18:18:58.865Z - info: inside oServer.start().then
+2016-01-22T18:18:58.923Z - info: found the database:mydb6
+2016-01-22T18:18:58.949Z - info: Existing classes
+2016-01-22T18:18:58.953Z - info: in openDb.then()
+2016-01-22T18:18:58.963Z - info: build success
+2016-01-22T18:19:05.322Z - info: 10
+2016-01-22T18:19:05.323Z - info: ProcessVertices complete
+2016-01-22T18:19:05.324Z - info: in insertVertices
+2016-01-22T18:19:05.324Z - info: vArr count=2
+2016-01-22T18:19:05.325Z - info: inside vertex loop 0
+2016-01-22T18:19:05.325Z - info: inside vertex loop undefined
+2016-01-22T18:19:05.327Z - info: in insertVertices
+2016-01-22T18:19:05.327Z - info: inside vertex loop 1
+2016-01-22T18:19:05.327Z - info: inside vertex loop undefined
+2016-01-22T18:19:05.328Z - info: in insertVertices
+2016-01-22T18:19:10.471Z - info: insert Vertices complete
+2016-01-22T18:19:28.264Z - info: oServer.serverNamelocal
+2016-01-22T18:19:28.268Z - info: THE END
+2016-01-22T18:19:28.284Z - info: inside oServer.start().then
+2016-01-22T18:19:28.346Z - info: database mydb7 not found. Creating one
+2016-01-22T18:19:35.249Z - info: created db=mydb7
+2016-01-22T18:19:35.250Z - info: database created:undefined
+2016-01-22T18:19:35.293Z - info: Existing classes
+2016-01-22T18:19:35.299Z - info: in openDb.then()
+2016-01-22T18:19:35.309Z - info: build success
+2016-01-22T18:19:40.857Z - info: 10
+2016-01-22T18:19:40.858Z - info: ProcessVertices complete
+2016-01-22T18:19:40.858Z - info: in insertVertices
+2016-01-22T18:19:40.859Z - info: vArr count=2
+2016-01-22T18:19:40.860Z - info: inside vertex loop 0
+2016-01-22T18:19:40.860Z - info: inside vertex loop undefined
+2016-01-22T18:19:40.864Z - info: in insertVertices
+2016-01-22T18:19:40.864Z - info: inside vertex loop 1
+2016-01-22T18:19:40.865Z - info: inside vertex loop undefined
+2016-01-22T18:19:40.866Z - info: in insertVertices
+2016-01-22T18:19:42.002Z - info: insert Vertices complete
+2016-01-22T18:23:28.923Z - info: oServer.serverNamelocal
+2016-01-22T18:23:28.927Z - info: THE END
+2016-01-22T18:23:28.940Z - info: inside oServer.start().then
+2016-01-22T18:23:29.002Z - info: found the database:mydb7
+2016-01-22T18:23:29.020Z - info: Existing classes
+2016-01-22T18:23:29.024Z - info: in openDb.then()
+2016-01-22T18:23:29.030Z - info: build success
+2016-01-22T18:23:34.742Z - info: 13
+2016-01-22T18:23:34.742Z - info: ProcessVertices complete
+2016-01-22T18:23:34.743Z - info: in insertVertices
+2016-01-22T18:23:34.743Z - info: vArr count=2
+2016-01-22T18:23:34.744Z - info: inside vertex loop 0
+2016-01-22T18:23:34.744Z - info: inside vertex loop undefined
+2016-01-22T18:23:34.745Z - info: in insertVertices
+2016-01-22T18:23:34.746Z - info: inside vertex loop 1
+2016-01-22T18:23:34.746Z - info: inside vertex loop undefined
+2016-01-22T18:23:34.747Z - info: in insertVertices
+2016-01-22T18:23:34.747Z - info: insert Vertices complete
+2016-01-22T18:24:39.935Z - info: oServer.serverNamelocal
+2016-01-22T18:24:39.939Z - info: THE END
+2016-01-22T18:24:39.953Z - info: inside oServer.start().then
+2016-01-22T18:24:40.009Z - info: found the database:mydb7
+2016-01-22T18:24:40.026Z - info: Existing classes
+2016-01-22T18:24:40.030Z - info: in openDb.then()
+2016-01-22T18:24:40.037Z - info: build success
+2016-01-22T18:24:46.210Z - info: 13
+2016-01-22T18:24:46.211Z - info: ProcessVertices complete
+2016-01-22T18:24:46.212Z - info: in insertVertices
+2016-01-22T18:24:46.212Z - info: vArr count=2
+2016-01-22T18:24:46.219Z - info: inside vertex loop 0
+2016-01-22T18:24:46.220Z - info: inside vertex loop undefined
+2016-01-22T18:24:46.220Z - info: in insertVertices
+2016-01-22T18:24:46.221Z - info: inside vertex loop 1
+2016-01-22T18:24:46.221Z - info: inside vertex loop undefined
+2016-01-22T18:24:46.222Z - info: in insertVertices
+2016-01-22T18:24:46.224Z - info: insert Vertices complete
